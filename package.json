@@ -1,6 +1,6 @@
 {
   "name": "bitbucket-repository-downloader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clone & Download all the repositories of a Bitbucket account using NodeJS",
   "main": "clone.js",
   "scripts": {
