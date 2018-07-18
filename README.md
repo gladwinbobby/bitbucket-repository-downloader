@@ -1,7 +1,7 @@
 # bitbucket-repository-downloader
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/gladwinbobby/10usd) [![Downloads](https://img.shields.io/npm/dt/bitbucket-repository-downloader.svg)](https://www.npmjs.com/package/bitbucket-repository-downloader)
 
-Clone &amp; Download all the repositories of a Bitbucket account using NodeJS
+Clone &amp; Download all the repositories of a Bitbucket account using NodeJS (Recommended Node v8.*)
 
 ## Installation
 ``` sh
