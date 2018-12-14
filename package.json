@@ -1,32 +1,32 @@
 {
-  "name": "bitbucket-repository-downloader",
-  "version": "1.0.1",
-  "description": "Clone & Download all the repositories of a Bitbucket account using NodeJS",
-  "main": "clone.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gladwinbobby/bitbucket-repository-downloader.git"
-  },
-  "keywords": [
-    "bitbucket",
-    "clone",
-    "download",
-    "repository",
-    "node",
-    "git"
-  ],
-  "author": "Gladwin Henald D",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/gladwinbobby/bitbucket-repository-downloader/issues"
-  },
-  "homepage": "https://github.com/gladwinbobby/bitbucket-repository-downloader#readme",
-  "dependencies": {
-    "nodegit": "^0.22.2",
-    "request": "^2.87.0",
-    "yargs": "^12.0.1"
-  }
+    "name": "bitbucket-repository-downloader",
+    "version": "1.0.2",
+    "description": "Clone & Download all the repositories of a Bitbucket account using NodeJS",
+    "main": "clone.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gladwinbobby/bitbucket-repository-downloader.git"
+    },
+    "keywords": [
+        "bitbucket",
+        "clone",
+        "download",
+        "repository",
+        "node",
+        "git"
+    ],
+    "author": "Gladwin Henald D",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/gladwinbobby/bitbucket-repository-downloader/issues"
+    },
+    "homepage": "https://github.com/gladwinbobby/bitbucket-repository-downloader#readme",
+    "dependencies": {
+        "nodegit": "^0.23.0",
+        "request": "^2.88.0",
+        "yargs": "^12.0.5"
+    }
 }
