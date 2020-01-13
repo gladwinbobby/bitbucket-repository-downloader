@@ -31,7 +31,6 @@ function cloneRepository(index) {
 		if (err) {
 			console.log(err);
 		}
-
 		if (err.errno === -4) {
 			console.warn("Skipping existing repository");
 			cloneRepository(index + 1);
