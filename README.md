@@ -11,15 +11,24 @@ npm i
 ```
 
 ## Usage
+### Simple Example
 Use the following command to start cloning the Bitbucket repositories of any account which have Two-Factor Authentication (2FA) disabled.
 ``` sh
 node clone.js --username=yourusername --password=yourpassword
 ```
 
-## Options
---username is your Bitbucket account username
+### Skip Repositories
+Pass the repository's url slug to the --skip argument.
+``` sh
+node clone.js --username=yourusername --password=yourpassword --skip=yourworkspaceslug/yourprojectslug --skip=gladwinbobby/bitbucket-repository-downloader
+```
 
---password is your Bitbucket account password
+### Options
+| Argument | Description |
+| :--- | :--- |
+| `--username` | Bitbucket account username. |
+| `--password` | Bitbucket account password. |
+| `--skip` | Bitbucket repository's full_name/url slug. |
 
 ## Issues & Bug Tracker
 Found any issues? Need any enhancements? [Feel free to open issue](https://github.com/gladwinbobby/bitbucket-repository-downloader/issues)
