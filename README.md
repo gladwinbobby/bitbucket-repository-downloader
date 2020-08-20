@@ -23,12 +23,13 @@ Pass the repository's url slug to the --skip argument.
 node clone.js --username=yourusername --password=yourpassword --skip=yourworkspaceslug/yourprojectslug --skip=gladwinbobby/bitbucket-repository-downloader
 ```
 
-## Options
+## All Options
 | Argument | Description |
 | :--- | :--- |
 | `--username` | Bitbucket account username. |
 | `--password` | Bitbucket account password. |
 | `--skip` | Bitbucket repository's full_name/url slug. |
+| `--mirror` | Clone a mirror copy of the repository. |
 
 ## Issues & Bug Tracker
 Found any issues? Need any enhancements? [Feel free to open issue](https://github.com/gladwinbobby/bitbucket-repository-downloader/issues)

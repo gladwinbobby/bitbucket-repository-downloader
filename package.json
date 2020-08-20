@@ -20,9 +20,6 @@
   ],
   "author": "Gladwin Henald D",
   "license": "Apache-2.0",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "bugs": {
     "url": "https://github.com/gladwinbobby/bitbucket-repository-downloader/issues"
   },
@@ -30,6 +27,7 @@
   "dependencies": {
     "nodegit": "^0.27.0",
     "request": "^2.88.2",
+    "shelljs": "^0.8.4",
     "yargs": "^15.4.1"
   }
 }

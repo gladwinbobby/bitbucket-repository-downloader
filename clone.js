@@ -1,11 +1,14 @@
 const yargs = require('yargs')
 const request = require('request');
 const nodegit = require('nodegit');
+const shell = require('shelljs');
 
 const argv = yargs.argv
 yargs.array("skip")
+yargs.boolean("mirror")
 
-const skippedRepos = argv.skip
+const skippedRepos = argv.skip || []
+const isMirror = argv.mirror || false
 
 let repos = [];
 let opts = {
@@ -21,26 +24,36 @@ let opts = {
     }
 };
 
+function processCloneRepository(index) {
+    if (repos.length - 1 === index) {
+        console.log("All repositories cloned.");
+    } else {
+        cloneRepository(index + 1);
+    }
+}
+
 function cloneRepository(index) {
     let repo = repos[index];
-    console.log(`Cloning ${repo.full_name} ..`);
-    nodegit.Clone(repo.links.clone[0].href, 'repositories/' + repo.full_name, opts)
-        .then(function () {
-            if (repos.length - 1 === index) {
-                console.log("All repositories cloned.");
-            } else {
-                cloneRepository(index + 1);
-            }
-        })
-        .catch(function (err) {
-            if (err) {
-                console.log(err);
-            }
-            if (err.errno === -4) {
-                console.warn("Skipping existing repository.");
-                cloneRepository(index + 1);
-            }
+    if (!isMirror) {
+        console.log(`Cloning ${repo.full_name} ..`);
+        nodegit.Clone(repo.links.clone[0].href, 'repositories/' + repo.full_name, opts)
+            .then(function () {
+                processCloneRepository(index);
+            })
+            .catch(function (err) {
+                if (err) {
+                    console.log(err);
+                }
+                if (err.errno === -4) {
+                    console.warn("Skipping existing repository.");
+                    processCloneRepository(index);
+                }
+            });
+    } else {
+        shell.exec(`git clone --mirror https://${encodeURIComponent(argv.username)}:${encodeURIComponent(argv.password)}@bitbucket.org/${repo.full_name}.git mirrored-repositories/${repo.full_name}`, function (code, stdout, stderr) {
+            processCloneRepository(index);
         });
+    }
 }
 
 function loadRepositories(url) {
