@@ -17,7 +17,7 @@ let opts = {
   fetchOpts: {
     callbacks: {
       credentials: function () {
-        return nodegit.Cred.userpassPlaintextNew(argv.username, argv.password)
+        return nodegit.Cred.userpassPlaintextNew(username, password)
       },
       certificateCheck: function () {
         return 1
@@ -67,8 +67,8 @@ function loadRepositories(url) {
     url,
     {
       auth: {
-        user: argv.username,
-        pass: argv.password,
+        user: username,
+        pass: password,
       },
     },
     function (err, response, body) {
@@ -90,7 +90,7 @@ function loadRepositories(url) {
   )
 }
 
-if (argv.username && argv.password) {
+if (username && password) {
   console.log('Loading all repositories.. please wait..')
   loadRepositories('https://api.bitbucket.org/2.0/repositories/?role=member')
 } else {
