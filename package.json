@@ -1,6 +1,6 @@
 {
   "name": "bitbucket-repository-downloader",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Clone & Download all the repositories of a Bitbucket account using NodeJS.",
   "main": "clone.js",
   "scripts": {
@@ -27,7 +27,7 @@
   "dependencies": {
     "nodegit": "^0.27.0",
     "request": "^2.88.2",
-    "shelljs": "^0.8.4",
-    "yargs": "^16.0.3"
+    "shelljs": "^0.8.5",
+    "yargs": "^17.3.1"
   }
 }
